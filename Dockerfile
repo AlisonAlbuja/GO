@@ -1,7 +1,7 @@
 
 
 # Use a Go image to build the application
-FROM golang:1.23.3-alpine AS builder
+FROM golang:1.23-alpine AS builder
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -9,8 +9,7 @@ WORKDIR /app
 # Copy the application source code
 COPY . .
 
-# Download dependencies
-RUN go mod tidy
+RUN go mod download
 # Build the application into an executable file called 'app'
 RUN go build -o main .
 
