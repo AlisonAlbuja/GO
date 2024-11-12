@@ -1,4 +1,4 @@
-module app-go
+module go
 
 go 1.23.0
 
