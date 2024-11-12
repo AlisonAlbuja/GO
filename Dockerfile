@@ -9,10 +9,11 @@ WORKDIR /app
 # Copy the application source code
 COPY . .
 
-# Build the application into an executable file called 'app'
-RUN go build -o main .
 # Download dependencies
 RUN go mod tidy
+# Build the application into an executable file called 'app'
+RUN go build -o main .
+
 
 # Expose the port that the application will listen on
 EXPOSE 8080
