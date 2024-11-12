@@ -10,7 +10,7 @@ WORKDIR /app
 COPY . .
 
 # Build the application into an executable file called 'app'
-RUN go build -o app .
+RUN go build -o main .
 # Download dependencies
 RUN go mod tidy
 
